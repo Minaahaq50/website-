@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📚 الكتب غير متوفرة حالياً</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(-45deg, #0d0d0d, #222, #1a1a1a, #000);
+      background-size: 400% 400%;
+      animation: gradient 6s ease infinite;
+      color: #ffd700;
+      text-align: center;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 30px;
+      border: 2px solid #ffd700;
+      border-radius: 15px;
+      background: rgba(0,0,0,0.6);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .loader {
+      border: 6px solid #333;
+      border-top: 6px solid #ffd700;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {transform: rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="loader"></div>
+    <h1>📚 الكتب غير متوفرة حالياً</h1>
+    <p>نحن نعمل على تفعيل وإضافة الكتب قريباً.<br>يرجى العودة لاحقاً.</p>
+  </div>
+
+</body>
+</html>
