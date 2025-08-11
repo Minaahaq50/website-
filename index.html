@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📥 جاري تجهيز التحميل...</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffd700;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    /* الدائرة */
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #ffd700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: bold;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    /* شريط التحميل */
+    .progress-container {
+      width: 80%;
+      height: 20px;
+      background: #333;
+      border-radius: 10px;
+      margin: 20px auto;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ffd700, #ffcc00);
+      transition: width 1s linear;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⏳ جاري تجهيز التحميل...</h1>
+  <div class="circle" id="countdown">3</div>
+  <div class="progress-container">
+    <div class="progress-bar" id="progress"></div>
+  </div>
+  <p>سيبدأ التحميل تلقائيًا بعد لحظات</p>
+
+  <script>
+    let counter = 3; // عدد الثواني
+    const countdownElem = document.getElementById("countdown");
+    const progressElem = document.getElementById("progress");
+    const nextPage = "book.html"; // 🔗 غيرها للرابط المطلوب
+
+    const timer = setInterval(() => {
+      counter--;
+      countdownElem.textContent = counter;
+      progressElem.style.width = ((3 - counter) / 3) * 100 + "%";
+
+      if (counter === 0) {
+        clearInterval(timer);
+        progressElem.style.width = "100%";
+        window.location.href = nextPage; // التحويل
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
